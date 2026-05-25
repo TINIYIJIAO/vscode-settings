@@ -6,21 +6,24 @@
 
 | 模块 | 说明 |
 |------|------|
-| 字体 | Cascadia Code → JetBrains Mono → Fira Code 回退链，16px，行高 1.6 |
-| 连字 | 启用 calt + 全套 stylistics sets，零加斜线区分 O/0 |
-| 光标 | 平滑动画闪烁，2px 线宽 |
-| 标尺 | 80 / 100 / 120 三线参考 |
-| 缩进 | 默认 4 空格，JSON/YAML/前端用 2 空格 |
-| 终端 | 等宽 14px，行高 1.3，光标闪烁 |
-| 文件排除 | 隐藏 `__pycache__`、`node_modules`、`.DS_Store` 等通用噪音 |
+| 字体 | Maple Mono NF CN 18px，行高 32，中英文混排优化 |
+| 连字 | 启用，长时间阅读舒适 |
+| 光标 | 平滑动画闪烁，细线样式，2px 宽 |
+| 括号 | 彩色染色 + 当前对高亮 + `matchBrackets: always` |
+| 缩进 | 缩进引导线替代括号竖线，高亮当前层级 |
+| 编辑器 | sticky scroll、语义高亮、选区高亮、linked editing |
+| 格式化 | 保存时自动格式化 + fixAll |
+| 文件 | 自动保存（1s 延迟）、去尾空格、末尾空行 |
+| 终端 | Maple Mono 18px，平滑滚动，10000 行回滚 |
+| 主题 | One Dark Pro Darker + Material Icon Theme |
 
 ## 快速开始
 
-### 1. 安装字体（二选一，推荐都装）
+### 1. 安装字体
 
 ```bash
-# Cascadia Code — 微软出品，Windows Terminal 自带
-winget install Microsoft.CascadiaCode
+# Maple Mono NF CN — 中英文混排等宽字体
+winget install MapleMono
 
 # JetBrains Mono — 备选回退
 winget install JetBrains.Mono
@@ -29,18 +32,41 @@ winget install JetBrains.Mono
 macOS 用户：
 
 ```bash
-brew install --cask font-cascadia-code
+brew install --cask font-maple-mono
 brew install --cask font-jetbrains-mono
 ```
 
-### 2. 应用配置
+### 2. 安装插件
 
-**方法 A：复制粘贴（推荐，简单直接）**
+打开 VSCode → `Ctrl + Shift + X`，搜索安装以下插件：
 
-1. 克隆仓库：`git clone <your-remote-url>`
+| 插件 | 作用 |
+|------|------|
+| **One Dark Pro** | 主题配色（Dark+ Darker 变体） |
+| **Material Icon Theme** | 文件图标主题 |
+| **Error Lens** | 行内显示错误/警告，不用鼠标悬停 |
+| **Better Comments** | 注释高亮（TODO / FIXME / NOTE 等） |
+| **Bracket Pair Color DLW** | 括号对彩色染色增强 |
+
+或者一键安装：
+
+```bash
+code --install-extension zhuangtongfa.material-theme
+code --install-extension PKief.material-icon-theme
+code --install-extension usernamehw.errorlens
+code --install-extension aaron-bond.better-comments
+code --install-extension BracketPairColorDLW.bracket-pair-color-dlw
+```
+
+### 3. 应用配置
+
+**方法 A：复制粘贴（推荐）**
+
+1. 克隆仓库：`git clone https://github.com/TINIYIJIAO/vscode-settings.git`
 2. 打开 VSCode → `Ctrl + Shift + P`
 3. 输入 `Preferences: Open User Settings (JSON)`
 4. 把 `settings.json` 内容粘贴进去，保存
+5. `Ctrl + Shift + P` → `Reload Window`
 
 **方法 B：符号链接（适合需要持续 git pull 更新）**
 
@@ -62,11 +88,23 @@ Linux / macOS：
 ln -sf /path/to/vscode-settings/settings.json ~/.config/Code/User/settings.json
 ```
 
-## 新机器部署
+## 新机器一键部署
 
 ```bash
-git clone <your-remote-url>
-# 然后按上面「应用配置」的步骤操作
+# 1. 字体
+winget install MapleMono JetBrains.Mono
+
+# 2. 配置
+git clone https://github.com/TINIYIJIAO/vscode-settings.git
+
+# 3. 插件
+code --install-extension zhuangtongfa.material-theme
+code --install-extension PKief.material-icon-theme
+code --install-extension usernamehw.errorlens
+code --install-extension aaron-bond.better-comments
+code --install-extension BracketPairColorDLW.bracket-pair-color-dlw
+
+# 4. 把 settings.json 粘贴到 VSCode 用户设置 → Reload Window
 ```
 
 ## 自定义
