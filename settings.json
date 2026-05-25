@@ -3,7 +3,7 @@
     //  字体 — 自然舒适，不撑不挤
     // ============================================
     "editor.fontFamily": "'Maple Mono NF CN', 'JetBrains Mono', Consolas, monospace",
-    "editor.fontSize": 16,
+    "editor.fontSize": 17,
     "editor.lineHeight": 1.6,
     "editor.fontWeight": "450",
     "editor.fontLigatures": true,
