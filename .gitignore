@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VSCode user workspace storage (not part of settings)
+globalStorage/
+workspaceStorage/
