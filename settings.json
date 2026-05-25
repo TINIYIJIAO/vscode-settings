@@ -2,148 +2,149 @@
   // ============================================
   //  字体 & 显示
   // ============================================
-  "editor.fontFamily": "'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Source Code Pro', Consolas, 'Courier New', monospace",
-  "editor.fontSize": 16,
-  "editor.lineHeight": 1.6,
+  "editor.fontFamily": "'Maple Mono NF CN', 'JetBrains Mono', Consolas, monospace",
+  "editor.fontSize": 18,
+  "editor.lineHeight": 32,
   "editor.fontWeight": "500",
-  "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'zero'",
-  "editor.letterSpacing": 0,
+  "editor.fontLigatures": true,
 
   // ============================================
   //  光标
   // ============================================
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line-thin",
   "editor.cursorWidth": 2,
-  "editor.cursorStyle": "line",
+  "editor.smoothScrolling": true,
 
   // ============================================
-  //  视觉 & 排版
+  //  编辑器体验
   // ============================================
+  "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
   "editor.renderWhitespace": "selection",
+  "editor.renderControlCharacters": false,
   "editor.renderLineHighlight": "all",
-  "editor.renderIndentGuides": true,
-  "editor.bracketPairColorization.enabled": true,
+
+  // 缩进引导（代替括号竖线）
+  "editor.guides.indentation": true,
+  "editor.guides.highlightActiveIndentation": true,
+
+  // 括号：染色 + 高亮当前对 + 始终匹配
   "editor.guides.bracketPairs": false,
+  "editor.bracketPairColorization.enabled": true,
   "editor.guides.highlightActiveBracketPair": true,
   "editor.matchBrackets": "always",
-  "editor.guides.indentation": true,
-  "editor.smoothScrolling": true,
-  "editor.stickyScroll.enabled": true,
-  "editor.padding.top": 4,
-  "editor.scrollBeyondLastLine": false,
 
-  // Minimap
-  "editor.minimap.enabled": true,
-  "editor.minimap.maxColumn": 80,
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.scale": 1,
-  "editor.minimap.showSlider": "mouseover",
+  "editor.stickyScroll.enabled": true,
+  "editor.wordWrap": "off",
+  "editor.linkedEditing": true,
+  "editor.occurrencesHighlight": "singleFile",
+  "editor.selectionHighlight": true,
+  "editor.semanticHighlighting.enabled": true,
 
   // ============================================
-  //  缩进 & 换行
+  //  自动格式化
+  // ============================================
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+
+  // ============================================
+  //  Tab / 缩进
   // ============================================
   "editor.tabSize": 4,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
-  "editor.wordWrap": "off",
-  "editor.rulers": [80, 100, 120],
-  "editor.trimAutoWhitespace": true,
+
+  // ============================================
+  //  文件
+  // ============================================
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
 
   // ============================================
-  //  语言特定
+  //  Explorer
   // ============================================
-  "[json]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "[jsonc]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "[yaml]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "[markdown]": {
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": false
-  },
-  "[python]": {
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true
-  },
-  "[html]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "[css]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "[javascript]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "[typescript]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-
-  // ============================================
-  //  工作区外观
-  // ============================================
-  "workbench.colorTheme": "Default Dark+",
-  "workbench.iconTheme": "vs-seti",
-  "workbench.tree.indent": 16,
-  "workbench.editor.enablePreview": false,
-  "workbench.startupEditor": "none",
-  "window.zoomLevel": 0,
-
-  // ============================================
-  //  终端
-  // ============================================
-  "terminal.integrated.fontFamily": "'Fira Code', 'Cascadia Code', 'JetBrains Mono', Consolas, monospace",
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.lineHeight": 1.3,
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyle": "line",
-
-  // ============================================
-  //  其他
-  // ============================================
-  "editor.linkedEditing": true,
-  "editor.occurrencesHighlight": "singleFile",
-  "editor.suggestSelection": "first",
-  "editor.snippetSuggestions": "top",
-  "breadcrumbs.enabled": true,
-  "diffEditor.renderSideBySide": true,
-  "diffEditor.ignoreTrimWhitespace": false,
+  "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
 
   // ============================================
-  //  文件排除（侧栏清爽）
+  //  面包屑
   // ============================================
-  "files.exclude": {
-    "**/.git": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/__pycache__": true,
-    "**/*.pyc": true,
-    "**/node_modules": true
+  "breadcrumbs.enabled": true,
+
+  // ============================================
+  //  终端
+  // ============================================
+  "terminal.integrated.fontFamily": "Maple Mono NF CN",
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontWeight": "500",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+  // ============================================
+  //  VSCode 外观
+  // ============================================
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.labelFormat": "short",
+  "workbench.tree.indent": 20,
+
+  // ============================================
+  //  Git
+  // ============================================
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  // ============================================
+  //  Error Lens
+  // ============================================
+  "errorLens.enabled": true,
+
+  // ============================================
+  //  Better Comments
+  // ============================================
+  "better-comments.highlightPlainText": true,
+
+  // ============================================
+  //  C/C++
+  // ============================================
+  "C_Cpp.errorSquiggles": "enabled",
+  "C_Cpp.intelliSenseEngine": "default",
+
+  // ============================================
+  //  Python
+  // ============================================
+  "python.analysis.typeCheckingMode": "basic",
+
+  // ============================================
+  //  FPGA / Verilog
+  // ============================================
+  "files.associations": {
+    "*.v": "verilog",
+    "*.vh": "verilog",
+    "*.sv": "systemverilog"
   },
 
   // ============================================
-  //  搜索排除
+  //  窗口
   // ============================================
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/__pycache__": true,
-    "**/*.pyc": true,
-    "**/.git": true
-  }
+  "window.zoomLevel": 1,
+  "window.commandCenter": true,
+
+  // ============================================
+  //  隐私 & 安全
+  // ============================================
+  "telemetry.telemetryLevel": "off",
+  "security.workspace.trust.untrustedFiles": "open"
 }
