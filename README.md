@@ -6,15 +6,15 @@
 
 | 模块 | 说明 |
 |------|------|
-| 字体 | Maple Mono NF CN 18px，行高 32，中英文混排优化 |
-| 连字 | 启用，长时间阅读舒适 |
+| 字体 | Maple Mono NF CN 16px，行高 1.6，字重 450，中英文混排 |
+| 连字 | 启用，letterSpacing 归零让字体自然呼吸 |
 | 光标 | 平滑动画闪烁，细线样式，2px 宽 |
 | 括号 | 彩色染色 + 当前对高亮 + `matchBrackets: always` |
 | 缩进 | 缩进引导线替代括号竖线，高亮当前层级 |
-| 编辑器 | sticky scroll、语义高亮、选区高亮、linked editing |
+| C/C++ | clang-format 接管：运算符空格、大括号风格、4 空格缩进 |
 | 格式化 | 保存时自动格式化 + fixAll |
 | 文件 | 自动保存（1s 延迟）、去尾空格、末尾空行 |
-| 终端 | Maple Mono 18px，平滑滚动，10000 行回滚 |
+| 终端 | Maple Mono 14px，行高 1.3，平滑滚动，10000 行回滚 |
 | 主题 | One Dark Pro Darker + Material Icon Theme |
 
 ## 快速开始
@@ -111,7 +111,7 @@ code --install-extension BracketPairColorDLW.bracket-pair-color-dlw
 
 此配置是通用基础版。每个项目的特殊设置放在项目根目录 `.vscode/settings.json` 中，会自动叠加生效。
 
-例如 FPGA 项目可以添加：
+项目示例 — FPGA：
 
 ```jsonc
 {
@@ -124,3 +124,16 @@ code --install-extension BracketPairColorDLW.bracket-pair-color-dlw
   }
 }
 ```
+
+项目示例 — C/C++（自定义格式化风格）：
+
+在项目根目录放 `.clang-format`：
+
+```yaml
+BasedOnStyle: LLVM
+IndentWidth: 4
+BreakBeforeBraces: Allman     # 大括号另起一行
+ColumnLimit: 100
+```
+
+保存时 clang-format 自动按项目规则格式化，无需额外配置。
