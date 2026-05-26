@@ -6,7 +6,7 @@
 
 | 模块 | 说明 |
 |------|------|
-| 字体 | Maple Mono NF CN 16px，行高 1.6，字重 500，中英文混排 |
+| 字体 | Maple Mono NF CN 17px，行高 1.6，字重 500，中英文混排 |
 | 连字 | 启用，letterSpacing 归零让字体自然呼吸 |
 | 光标 | 平滑动画闪烁，细线样式，2px 宽 |
 | 括号 | 彩色染色 + 当前对高亮 + `matchBrackets: always` |
